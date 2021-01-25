@@ -2,8 +2,9 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox prefHeight="419.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -44,20 +45,44 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="424.0" prefWidth="923.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button layoutX="46.0" layoutY="263.0" mnemonicParsing="false" onAction="#añadirProducto" prefHeight="26.0" prefWidth="245.0" text="Añadir producto" />
-            <Button layoutX="334.0" layoutY="263.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="26.0" prefWidth="245.0" text="Eliminar producto" />
-            <TableView layoutX="28.0" layoutY="22.0" prefHeight="200.0" prefWidth="562.0">
+            <Button layoutX="636.0" layoutY="270.0" mnemonicParsing="false" onAction="#añadirProducto" prefHeight="26.0" prefWidth="245.0" text="Añadir producto" />
+            <Button layoutX="636.0" layoutY="305.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="26.0" prefWidth="245.0" text="Eliminar producto" />
+            <TableView fx:id="tableView" layoutX="28.0" layoutY="22.0" prefHeight="348.0" prefWidth="562.0">
               <columns>
-                <TableColumn prefWidth="132.00000381469727" text="Código producto" />
-                <TableColumn text="Producto " />
-                  <TableColumn prefWidth="96.0" text="Cantidad" />
-                  <TableColumn prefWidth="131.20001220703125" text="Fecha ultimo ingreso" />
-                  <TableColumn prefWidth="121.60001220703123" text="Precio" />
+                <TableColumn fx:id="CodigoProductoColumn" prefWidth="115.20001220703125" text="Código producto" />
+                <TableColumn fx:id="ObjetoColumn" prefWidth="96.0" text="Producto " />
+                  <TableColumn fx:id="CantidadColumn" prefWidth="96.0" text="Cantidad" />
+                  <TableColumn fx:id="UltIngresoColumn" prefWidth="131.20001220703125" text="Fecha ultimo ingreso" />
+                  <TableColumn fx:id="PrecioColumn" prefWidth="121.60001220703123" text="Precio" />
               </columns>
             </TableView>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="193.0" layoutY="303.0" mnemonicParsing="false" onAction="#pressExit" prefHeight="26.0" prefWidth="246.0" text="Salir" />
+            <TextField fx:id="CodigoProducto" layoutX="635.0" layoutY="50.0" prefHeight="26.0" prefWidth="246.0" />
+            <TextField fx:id="Objeto" layoutX="635.0" layoutY="110.0" prefHeight="26.0" prefWidth="246.0" />
+            <TextField fx:id="Cantidad" layoutX="635.0" layoutY="173.0" prefHeight="26.0" prefWidth="246.0" />
+            <TextField fx:id="Precio" layoutX="635.0" layoutY="233.0" prefHeight="26.0" prefWidth="246.0" />
+            <Label layoutX="635.0" layoutY="22.0" prefHeight="34.0" prefWidth="230.0" text="Código del producto" textFill="#847474">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="635.0" layoutY="76.0" prefHeight="34.0" prefWidth="230.0" text="Producto" textFill="#847474">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="635.0" layoutY="136.0" prefHeight="34.0" prefWidth="230.0" text="Cantidad por unidad" textFill="#847474">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="635.0" layoutY="199.0" prefHeight="34.0" prefWidth="230.0" text="Precio" textFill="#847474">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="636.0" layoutY="342.0" mnemonicParsing="false" onAction="#pressExit" prefHeight="26.0" prefWidth="245.0" text="Salir" />
          </children>
     </AnchorPane>
   </children>

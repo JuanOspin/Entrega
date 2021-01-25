@@ -3,9 +3,9 @@ package sample;
 public class Trabajador {
     boolean gerente;
     String usuario;
-    int contrasena;
+    String contrasena;
 
-    public Trabajador(boolean gerente, String usuario, int contrasena) {
+    public Trabajador(boolean gerente, String usuario, String contrasena) {
         this.gerente = gerente;
         this.usuario = usuario;
         this.contrasena = contrasena;
@@ -21,7 +21,7 @@ public class Trabajador {
         return usuario;
     }
 
-    public int getContrasena() {
+    public String getContrasena() {
         return contrasena;
     }
 
@@ -35,7 +35,7 @@ public class Trabajador {
         this.usuario = usuario;
     }
 
-    public void setContrasena(int contrasena) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 }

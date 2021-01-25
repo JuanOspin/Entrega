@@ -1,70 +1,57 @@
 package sample;
 
+import javafx.beans.property.SimpleStringProperty;
 import java.time.LocalDate;
 
 public class Producto {
-    int id, cantidad, precio;
-    LocalDate fechaIngreso;
-    String nombre;
+    private SimpleStringProperty CodigoProducto, Objeto, Precio, Cantidad;
+    private LocalDate UltIngreso;
 
-    public Producto(String nombre, int id, int cantidad, int precio, LocalDate fechaIngreso){
-        this.nombre = nombre;
-        this.id = id;
-        this.cantidad = cantidad;
-        this.precio = precio;
-        this.fechaIngreso = fechaIngreso;
+    public Producto(String codigoProducto, String objeto, String precio, String cantidad, LocalDate ultIngreso) {
+        this.CodigoProducto = new SimpleStringProperty(codigoProducto);
+        this.Objeto = new SimpleStringProperty(objeto);
+        this.Precio = new SimpleStringProperty(precio);
+        this.Cantidad = new SimpleStringProperty(cantidad);
+        this.UltIngreso = ultIngreso;
     }
 
-    public void AnadirProductos(int cantidad) {
-
+    public String getCodigoProducto() {
+        return CodigoProducto.get();
     }
 
-    public void QuitarProductos(int cantidad) {
 
+    public void setCodigoProducto(String codigoProducto) {
+        this.CodigoProducto.set(codigoProducto);
     }
 
-    ///////////////////////////////GETTERS///////////////////////////////
-
-    public int getId() {
-        return id;
+    public String getObjeto() {
+        return Objeto.get();
+    }
+    public void setObjeto(String objeto) {
+        this.Objeto.set(objeto);
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public String getPrecio() {
+        return Precio.get();
     }
 
-    public int getPrecio() {
-        return precio;
+    public void setPrecio(String precio) {
+        this.Precio.set(precio);
     }
 
-    public LocalDate getFechaIngreso() {
-        return fechaIngreso;
+    public String getCantidad() {
+        return Cantidad.get();
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setCantidad(String cantidad) {
+        this.Cantidad.set(cantidad);
     }
 
-    ///////////////////////////////SETTERS///////////////////////////////
-
-    public void setId(int id) {
-        this.id = id;
+    public LocalDate getUltIngreso() {
+        return UltIngreso;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setUltIngreso(LocalDate ultIngreso) {
+        UltIngreso = ultIngreso;
     }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
-
-    public void setFechaIngreso(LocalDate fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
 }
